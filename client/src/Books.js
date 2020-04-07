@@ -18,7 +18,8 @@ class Books extends Component {
         request.get("https://www.googleapis.com/books/v1/volumes")
         .query({ q: this.state.searchField })
         .then((data) => {
-          this.setState({ books: [...data.body.items] })
+          const cleanData = this.cleanData(data)
+          this.setState({ books: cleanData })
         })
     }
 
@@ -28,6 +29,19 @@ class Books extends Component {
 
     handleSort = (event) => {
       this.setState({ sort: event.target.value })
+    }
+
+    cleanData = (data) => {
+      const cleanedData = data.body.items.map((book) => {
+        if (book.volumeInfo.hasOwnProperty('publishedDate') === false) {
+          book.volumeInfo['publishedDate'] = '0000';
+        }
+        else if (book.volumeInfo.hasOwnProperty('imageLinks') === false) {
+          book.volumeInfo['imageLinks'] = { thumbnail: 'https://www.nextlevelfairs.com/assets/images/image-not-available.png' };
+        }
+        return book;
+      })
+      return cleanedData;
     }
 
   render() {
