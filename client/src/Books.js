@@ -23,6 +23,17 @@ class Books extends Component {
         })
     }
 
+    handleSubmit = (event) => {
+      event.preventDefault();
+      request
+          .get("https://www.googleapis.com/books/v1/volumes")
+          .query({ q: this.state.searchField })
+          .then((data) => {
+              console.log(data);
+              this.setState({ books: [...data.body.items] })
+      })
+  }
+
     handleSearch = (event) => {
         this.setState({ searchField: event.target.value})
     }
@@ -56,7 +67,7 @@ class Books extends Component {
 
     return (
       <div>
-          <SearchArea searchBook={this.searchBook} handleSearch={this.handleSearch} handleSort={this.handleSort}/>
+          <SearchArea searchBook={this.searchBook} handleSubmit={this.handleSubmit} handleSearch={this.handleSearch} handleSort={this.handleSort}/>
           <BookList books={sortedBooks}/>
       </div>
     );
