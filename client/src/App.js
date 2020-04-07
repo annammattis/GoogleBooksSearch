@@ -11,10 +11,10 @@ import Nav from "./components/Nav";
 class App extends Component {
   render() {
     return (
-      <div className="App">
-          <Header />
-          <Books />
-      </div>
+      // <div className="App">
+      //     <Header />
+      //     <Books />
+      // </div>
       <Router>
         <div>
           <Nav />
