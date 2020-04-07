@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import registerServiceWorker from "./registerServiceWorker";
+import serviceWorker from "./serviceWorker";
 
 function ctorName(val) { 
     return val.constructor && typeof val.constructor === 'function' ? val.constructor.name : null; 
@@ -10,4 +10,4 @@ function ctorName(val) {
 ctorName();
 
 ReactDOM.render(<App />, document.getElementById("root"));
-registerServiceWorker();
+serviceWorker();
