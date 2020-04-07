@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from "react";
 
 const Header = () => {
     return(
         <header>
-            <i className="fad fa-books"></i>
+            <i className="fad fa-books fa-2x"></i>
             <h1>Books</h1>
         </header>
     )

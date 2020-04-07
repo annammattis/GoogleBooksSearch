@@ -2,7 +2,7 @@
 A new React-based Google Books Search app. Create React components, work with helper/util functions, and utilize React lifecycle methods to query and display books based on user searches. Also use Node, Express and MongoDB so that users can save books to review or purchase later.
 
 ## What is This?
-This is a memorization/click game. The object of the game is to click on only one picture once. If you repeat guesses, you lose and the score is reset to 0. You win by reaching the max score total of 12.
+This is a Book search app. You type in the book you are looking for and are able to either save the book to your personal DB or you can follow the link to purchase the book. The links are routed to Google Books API.
 
 <!-- ## Getting Started
 Try the app Here [https://moma-clicky-game.herokuapp.com/](https://moma-clicky-game.herokuapp.com/) (`Heroku`)
@@ -14,11 +14,11 @@ Try the app Here [https://moma-clicky-game.herokuapp.com/](https://moma-clicky-g
 ![Screenshot](/public/assets/screenshots/demo-02.png)
 `You have exceptional eidetic memory!`&#8673; -->
 
-## How to Play
-* Click on any picutre that you desire
-* The pictures will all reshuffle themselves
-* Click on another picture, but REMEMBER that you can only click on a picture once
-* Keep going to see if you can get all 12
+## How to Use
+* Type in any book you desire
+* All the books available through Google Books will appear
+* Click on the book of your choosing
+* Save the book or go to the link to buy
 
 ## Technologies Utilized
 * [React](https://reactjs.org/)
@@ -33,11 +33,11 @@ Try the app Here [https://moma-clicky-game.herokuapp.com/](https://moma-clicky-g
 * [VSCode](https://code.visualstudio.com/)
 
 ## How to Install and Run
-01. git clone https://github.com/annammattis/Clicky_Game
-02. cd into the react-clicky-game (pwd or ls to check yo self)
+01. git clone https://github.com/annammattis/GoogleBookSearch
+02. cd into GoogleBookSearch (pwd or ls to check yo self)
 03. Run npm install to get all dependencies
 04. Run npm start (in bash/powershell)
-05. Go to localhost:3000 in your web browser (chrome)
+05. Go to localhost:3001 in your web browser (chrome)
 
 ## About the Author:
 [Anna-Marjorie Mattis](https://github.com/annammattis)
