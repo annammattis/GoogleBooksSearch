@@ -4,5 +4,9 @@ import "./index.css";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 
+function ctorName(val) { 
+    return val.constructor && typeof val.constructor === 'function' ? val.constructor.name : null; 
+  } 
+
 ReactDOM.render(<App />, document.getElementById("root"));
 registerServiceWorker();
