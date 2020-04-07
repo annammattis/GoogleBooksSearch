@@ -6,10 +6,11 @@ const BookList = (props) => {
             {
                 props.books.map((book, index) => {
                     return <BookCard 
-                                image={}
-                                title={}
-                                author={}
-                                published={}
+                                key={index}
+                                image={book.volumeInfo.imageLinks.thumbnail}
+                                title={book.title}
+                                author={book.authors}
+                                published={book.publishedDate}
                             />
                 })
             }
