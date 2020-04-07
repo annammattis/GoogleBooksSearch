@@ -20,7 +20,7 @@ class Saved extends Component {
     API.getSavedBooks()
       .then(res =>
         this.setState({
-          books: res.data
+          books: res
         })
       )
       .catch(err => console.log(err));
