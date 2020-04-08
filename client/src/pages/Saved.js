@@ -17,10 +17,10 @@ class Saved extends Component {
   }
 
   getSavedBooks = () => {
-    API.getSavedBooks()
+    API.getSavedBooks(this.state.q)
       .then(res =>
         this.setState({
-          books: res
+          books: res.data.items
         })
       )
       .catch(err => console.log(err));
