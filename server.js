@@ -1,23 +1,9 @@
+const express = require("express");
+
 const mongoose = require("mongoose");
 const routes = require("./routes");
-const morgan = require("morgan");
-const express = require('express');
-const favicon = require('express-favicon');
-const path = require('path');
-const PORT = process.env.PORT || 3002;
 const app = express();
-
-app.use(morgan("dev"));
-app.use(favicon(__dirname + '/build/favicon.ico'));
-// the __dirname is the current directory from where the script is running
-app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname, 'build')));
-app.get('/ping', function (req, res) {
- return res.send('pong');
-});
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+const PORT = process.env.PORT || 3001;
 
 // Configure body parsing for AJAX requests
 app.use(express.urlencoded({ extended: true }));
@@ -32,7 +18,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/googlesearch",
+  process.env.MONGODB_URI || "mongodb://user1:password1@ds125871.mlab.com:25871/heroku_0xn0jnk7",
   {
     useCreateIndex: true,
     useNewUrlParser: true
