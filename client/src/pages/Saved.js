@@ -15,7 +15,7 @@ class Saved extends Component {
   componentDidMount() {
     this.getSavedBooks();
   }
-
+//no need for this.state.q? or items in res.data.items?
   getSavedBooks = () => {
     API.getSavedBooks(this.state.q)
       .then(res =>

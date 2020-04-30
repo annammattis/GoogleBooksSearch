@@ -21,7 +21,7 @@ class Home extends Component {
       [name]: value
     });
   };
-
+//books: res.data??
   getBooks = () => {
     API.getBooks(this.state.q)
       .then(res =>
